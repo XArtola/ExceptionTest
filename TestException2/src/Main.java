@@ -13,30 +13,43 @@ public class Main {
 		Person person = new Person();
 
 		boolean notFinished = true;
+		int cnt = 0;
 		while (notFinished) {
 
 			try {
 
-				System.out.println("Enter the dni");
-				String dni = sc.next();
-				sc.nextLine();
-				person.setDni(dni);
+				if (cnt == 0) {
+					System.out.println("Enter the dni");
+					String dni = sc.next();
+					sc.nextLine();
+					person.setDni(dni);
+					cnt++;
+				}
 
-				System.out.println("Enter the age");
-				int age = sc.nextInt();
-				sc.nextLine();
-				person.setAge(age);
+				if (cnt == 1) {
+					System.out.println("Enter the age");
+					int age = sc.nextInt();
+					sc.nextLine();
+					person.setAge(age);
+					cnt++;
+				}
 
-				System.out.println("Enter the birthYear");
-				String birthYear = sc.next();
-				sc.nextLine();
-				person.setBirthYear(birthYear);
+				if (cnt == 2) {
+					System.out.println("Enter the birthYear");
+					String birthYear = sc.next();
+					sc.nextLine();
+					person.setBirthYear(birthYear);
+					cnt++;
+				}
 
-				System.out.println("Enter the city");
-				String city = sc.next();
-				sc.nextLine();
-				person.setCity(city);
-
+				if (cnt == 3) {
+					System.out.println("Enter the city");
+					String city = sc.next();
+					sc.nextLine();
+					person.setCity(city);
+					cnt++;
+				}
+				cnt = 0;
 				notFinished = false;
 
 			}
@@ -46,17 +59,17 @@ public class Main {
 				System.out.println(e);
 				e.printStackTrace();
 
-			} finally {
-				System.out.println("Person information");
-
-				System.out.println("Age is " + person.getAge());
-
-				System.out.println("birthYear is " + person.getBirthYear());
-
-				System.out.println("City is " + person.getCity());
 			}
 
 		}
+		
+		System.out.println("Person information");
+
+		System.out.println("Age is " + person.getAge());
+
+		System.out.println("birthYear is " + person.getBirthYear());
+
+		System.out.println("City is " + person.getCity());
 
 	}
 
